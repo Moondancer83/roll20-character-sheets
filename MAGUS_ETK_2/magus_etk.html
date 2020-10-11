@@ -1,0 +1,364 @@
+<div class="main">
+
+  <div class="section attributes">
+    <div class="attribute">
+      <label>Erő</label>
+      <input type="number" name="attr_ero" value="0" min="3" max="20" class="value"/>
+      <input type="number" name="attr_ero_mod" value="0" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_ero_max" value="@{ero} + @{ero_mod}" disabled="disabled" class="value"/>
+      <input type="hidden" name="attr_ero_10" value="0" />
+      <button type="roll" name="roll_ero_proba" value="&{template:default} {{name= Erő próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{ero_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+    <div class="attribute">
+      <label>Állóképesség</label>
+      <input type="number" name="attr_allokepesseg" value="0" min="3" max="20" class="value"/>
+      <input type="number" name="attr_allokepesseg_mod" value="0" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_allokepesseg_max" value="@{allokepesseg} + @{allokepesseg_mod}" disabled="disabled" class="value"/>
+      <input type="hidden" name="attr_allokepesseg_10" value="0" />
+      <button type="roll" name="roll_allokepesseg_proba" value="&{template:default} {{name= Állóképesség próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{allokepesseg_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+    <div class="attribute">
+      <label>Ügyesség</label>
+      <input type="number" name="attr_ugyesseg" value="0" min="3" max="20" class="value"/>
+      <input type="number" name="attr_ugyesseg_mod" value="0" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_ugyesseg_max" value="@{ugyesseg} + @{ugyesseg_mod}" disabled="disabled" class="value"/>
+      <input type="hidden" name="attr_ugyesseg_10" value="0" />
+      <button type="roll" name="roll_ugyesseg_proba" value="&{template:default} {{name= Ügyesség próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{ugyesseg_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+    <div class="attribute">
+      <label>Gyorsaság</label>
+      <input type="number" name="attr_gyorsasag" value="0" min="3" max="20" class="value"/>
+      <input type="number" name="attr_gyorsasag_mod" value="0" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_gyorsasag_max" value="@{gyorsasag} + @{gyorsasag_mod}" disabled="disabled" class="value"/>
+      <input type="hidden" name="attr_gyorsasag_10" value="0" />
+      <button type="roll" name="roll_gyorsasag_proba" value="&{template:default} {{name= Gyorsaság próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{gyorsasag_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+    <div class="attribute">
+      <label>Egészség</label>
+      <input type="number" name="attr_egeszseg" value="0" min="3" max="20" class="value"/>
+      <input type="number" name="attr_egeszseg_mod" value="0" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_egeszseg_max" value="@{egeszseg} + @{egeszseg_mod}" disabled="disabled" class="value"/>
+      <input type="hidden" name="attr_egeszseg_10" value="0" />
+      <button type="roll" name="roll_egeszseg_proba" value="&{template:default} {{name= Egészség próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{egeszseg_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+    <div class="attribute">
+      <label>Szépség</label>
+      <input type="number" name="attr_szepseg" value="0" min="3" max="20" class="value"/>
+      <input type="number" name="attr_szepseg_mod" value="0" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_szepseg_max" value="@{szepseg} + @{szepseg_mod}" disabled="disabled" class="value"/>
+      <input type="hidden" name="attr_szepseg_10" value="0" />
+      <button type="roll" name="roll_szepseg_proba" value="&{template:default} {{name= Szépség próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{szepseg_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+    <div class="attribute">
+      <label>Intelligencia</label>
+      <input type="number" name="attr_intelligencia" value="0" min="3" max="20" class="value" />
+      <input type="number" name="attr_intelligencia_mod" value="0" style="text-align: right" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_intelligencia_max" value="@{intelligencia} + @{intelligencia_mod}" disabled="disabled" class="value" />
+      <input type="hidden" name="attr_intelligencia_10" value="0" />
+      <button type="roll" name="roll_intelligencia_proba" value="&{template:default} {{name= Intelligencia próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{intelligencia_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+    <div class="attribute">
+      <label>Akaraterő</label>
+      <input type="number" name="attr_akaratero" value="0" min="3" max="20" class="value"/>
+      <input type="number" name="attr_akaratero_mod" value="0" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_akaratero_max" value="@{akaratero} + @{akaratero_mod}" disabled="disabled" class="value"/>
+      <input type="hidden" name="attr_akaratero_10" value="0" />
+      <button type="roll" name="roll_akaratero_proba" value="&{template:default} {{name= Akaraterő próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{akaratero_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+    <div class="attribute">
+      <label>Asztrál</label>
+      <input type="number" name="attr_asztral" value="0" min="3" max="20" class="value"/>
+      <input type="number" name="attr_asztral_mod" value="0" class="mod"/>
+      <span class="arrow">→</span>
+      <input type="number" name="attr_asztral_max" value="@{asztral} + @{asztral_mod}" disabled="disabled" class="value"/>
+      <input type="hidden" name="attr_asztral_10" value="0" />
+      <button type="roll" name="roll_asztral_proba" value="&{template:default} {{name= Asztrál próba}} {{Dobás= [[1d10]]}} {{Célszám= [[@{asztral_10}+?{Módosító|0}]]}} {{Info= Célszám alá kell dobni.}}" />
+    </div>
+  </div>
+
+  <div class="section health">
+    <h2>Életerő és fájdalomtűrés</h2>
+    <div>
+      <span style="display: inline-block; width: 150px; margin: 0; padding-right: 10px;">&nbsp;</span>
+      <span style="display: inline-block; width: 64px; text-align: center; font-weight: bold;">alap</span>
+      <span style="display: inline-block; width: 64px; text-align: center; font-weight: bold;">plusz</span>
+      <span style="display: inline-block; width: 64px; text-align: center; font-weight: bold;">max.</span>
+      <span style="display: inline-block; width: 64px; text-align: center; font-weight: bold;">akt.</span>
+    </div>
+    <div>
+      <label>Ép</label>
+      <input type="number" name="attr_ep_alap" value="1"  class="value" />
+      <span style="display: inline-block; width: 64px;"></span>
+      <input type="number" name="attr_ep_max" value="@{egeszseg_10} + @{ep_alap}" class="value" disabled="disabled"/>
+      <input type="number" name="attr_ep" value="1" min="0" class="value" />
+    </div>
+    <div>
+      <label>Fp</label>
+      <input type="number" name="attr_fp_alap" value="1"  class="value" />
+      <input type="number" name="attr_fp_plus" value="1"  class="value" />
+      <input type="number" name="attr_fp_max" value="@{allokepesseg_10} + @{akaratero_10} + @{fp_alap} + @{fp_plus}" disabled="disabled" class="value"></input>
+      <input type="number" name="attr_fp" value="1" min="0"  class="value" />
+    </div>
+    <div>
+      <h6>Sebek és mérgezések</h6>
+      <textarea name="attr_sebek"></textarea>
+    </div>
+  </div>
+
+  <div class="section magic">
+    <h2>Mágia</h2>
+    <div>
+      <span>hagyomány</span>
+      <input type="text" name="attr_magia_hagyomany" />
+      <span>szint</span>
+      <input type="number" name="attr_magia_szint" value="0" class="value" />
+      <span>max. Mp</span>
+      <input type="number" name="attr_mp_max" value="0" class="value" min="0" />
+      <span>akt. Mp</span>
+      <input type="number" name="attr_mp" value="0" min="0" class="value" />
+    </div>
+  </div>
+
+  <div class="section armor">
+    <h2>Vért</h2>
+    <div>
+      <span>tipus</span>
+      <input type="text" name="attr_vert" />
+      <span>MGT</span>
+      <input type="number" name="attr_mgt" value="0" max="0" class="value" />
+      <span>max. SFÉ</span>
+      <input type="number" name="attr_sfe_max" value="0" class="value" min="0" />
+      <span>akt. SFÉ</span>
+      <input type="number" name="attr_sfe" value="0" min="0" class="value" />
+    </div>
+  </div>
+
+  <div class="section psi">
+    <h2>Pszi</h2>
+    <div>
+      <span>ösvény</span>
+      <input type="text" name="attr_pszi_osveny" class="value" />
+      <span>szint</span>
+      <input type="number" name="attr_pszi_szint" class="value" />
+      <span>max. Ψp</span>
+      <input type="number" name="attr_pszi_max" class="value" />
+      <span>akt. Ψp</span>
+      <input type="number" name="attr_pszi" class="value" />
+    </div>
+    <div>
+      <h6>Aktív alkalmazások</h6>
+      <textarea name="attr_pszi_aktiv"></textarea>
+    </div>
+  </div>
+
+  <div class="section resistance">
+    <h2>Mágia ellenállás</h2>
+    <div>
+      <div style="display: inline-block;">&nbsp;</div>
+      <div style="display: inline-block;">Asztrál</div>
+      <div style="display: inline-block;">Mentál</div>
+    </div>
+    <div>
+      <div style="display: inline-block;">Tudatalatti</div>
+      <span name="attr_asztral_10" class="value"></span>
+      <span name="attr_akaratero_10" class="value"></span>
+    </div>
+    <div>
+      <div style="display: inline-block;">Statikus</div>
+      <input type="number" name="attr_me_asztral_statikus" value="0" min="0" class="value" />
+      <input type="number" name="attr_me_mental_statikus" value="0" min="0" class="value" />
+    </div>
+    <div>
+      <div style="display: inline-block;">Dinamikus</div>
+      <input type="number" name="attr_me_asztral_dinamikus" value="0" min="0" class="value" />
+      <input type="number" name="attr_me_mental_dinamikus" value="0" min="0" class="value" />
+    </div>
+    <div>
+      <div style="display: inline-block;">Egyéb</div>
+      <input type="number" name="attr_me_asztral_egyeb" value="0" min="0" class="value" />
+      <input type="number" name="attr_me_mental_egyeb" value="0" min="0" class="value" />
+    </div>
+    <div>
+      <div style="display: inline-block;">Összesen</div>
+      <input type="number" name="attr_me_asztral" value="@{asztral_10} + @{me_asztral_statikus} + @{me_asztral_dinamikus} + @{me_asztral_egyeb}" class="value" disabled="disabled" />
+      <input type="number" name="attr_me_mental" value="@{akaratero_10} + @{me_mental_statikus} + @{me_mental_dinamikus} + @{me_mental_egyeb}" class="value" disabled="disabled" />
+    </div>
+
+  </div>
+
+  <div class="section armament">
+    <h2>Fegyverzet</h2>
+    <div>
+      <label>Jobb kéz</label>
+      <select name="attr_jobb_kez"></select> <!-- Get values from list -->
+      <input type="hidden" name="attr_jobb_kez_ke" value="0" /> <!-- Populate values -->
+      <input type="hidden" name="attr_jobb_kez_te" value="0" />
+      <input type="hidden" name="attr_jobb_kez_ve" value="0" />
+      <input type="hidden" name="attr_jobb_kez_sebzes" value="0" />
+      <button type="roll" value="/roll 1d100" /> <!-- Roll template needed -->
+    </div>
+    <div>
+      <label>Bal kéz</label>
+      <select name="attr_bal_kez"></select>
+      <input type="hidden" name="attr_bal_kez_ke" value="0" />
+      <input type="hidden" name="attr_bal_kez_te" value="0" />
+      <input type="hidden" name="attr_bal_kez_ve" value="0" />
+      <input type="hidden" name="attr_bal_kez_sebzes" value="0" />
+      <button type="roll" value="/roll 1d100" /> <!-- Roll template needed -->
+    </div>
+  </div>
+
+  <div class="section armory" style="width: 1000px">
+    <h2>Közelharci fegyverek</h2>
+    <div class="row">
+      <label>név</label>
+      <label>tám.</label>
+      <label>KÉ</label>
+      <label>TÉ</label>
+      <label>VÉ</label>
+      <label>sebzés</label>
+      <label>KD</label>
+      <label>TD</label>
+      <label>SD</label>
+    </div>
+
+    <div class="row">
+      <div style="width: 210px; display: inline-block;">alap</div>
+      <input type="text" name="attr_tam_max" style="width: 2em; display: inline-block; text-align: center;"/>
+      <input type="number" name="attr_alap_ke" value="0" min="0" class="value" />
+      <input type="number" name="attr_alap_te" value="0" min="0" class="value" />
+      <input type="number" name="attr_alap_ve" value="0" min="0" class="value" />
+      <input type="number" name="attr_alap_sebzes_plusz" value="0" min="0" class="value" style="margin-left: 168px;" />
+    </div>
+    <div class="row">
+      <div style="width: 210px; display: inline-block;">szintenként</div>
+      <div style="width: 2em; display: inline-block;"></div>
+      <input type="number" name="attr_szint_ke" value="0" min="0" class="value" />
+      <input type="number" name="attr_szint_te" value="0" min="0" class="value" />
+      <input type="number" name="attr_szint_ve" value="0" min="0" class="value" />
+      <input type="number" name="attr_szint_sebzes_plusz" value="0" min="0" class="value" style="margin-left: 168px;" />
+    </div>
+    <div class="row">
+      <div style="width: 210px; display: inline-block;">fegyver nélkül</div>
+      <div style="width: 2em; display: inline-block;"></div>
+      <input type="number" name="attr_szum_ke" value="@{ugyesseg_10} + @{gyorsasag_10} + @{alap_ke} + @{szint_ke} * @{szint}" class="value" disabled="disabled" />
+      <input type="number" name="attr_szum_te" value="@{ero_10} + @{ugyesseg_10} + @{gyorsasag_10} + @{alap_te} + @{szint_te} * @{szint}" class="value" disabled="disabled" />
+      <input type="number" name="attr_szum_ve" value="@{ugyesseg_10} + @{gyorsasag_10} + @{alap_ve} + @{szint_ve} * @{szint}" min="0" class="value" disabled="disabled" />
+      <input type="number" name="attr_szum_sebzes_plusz" value="@{alap_sebzes_plusz} + @{szint_sebzes_plusz} * @{szint}" class="value" disabled="disabled" style="margin-left: 168px;" />
+    </div>
+
+    <fieldset class="repeating_weaponmelee">
+      <div class="row">
+        <input type="text" name="attr_nev" />
+        <input type="text" name="attr_tam" />
+        <input type="number" name="attr_fegyver_ke" value="0" min="0" class="value" />
+        <input type="number" name="attr_fegyver_te" value="0" min="0" class="value" />
+        <input type="number" name="attr_fegyver_ve" value="0" min="0" class="value" />
+
+        <input type="number" name="attr_sebzes_szorzo" value="0" min="0" class="value" />
+        k
+        <input type="number" name="attr_sebzes_kocka" value="0" min="0" class="value" />
+        +
+        <input type="number" name="attr_sebzes_plusz" value="0" min="0" class="value" />
+        <button type="roll" name="roll_kd" value="/roll 1d10 + @{szum_ke} + @{fegyver_ke}" />
+        <button type="roll" name="roll_td" value="/roll 1d100 + @{szum_te} + @{fegyver_te} +?{Módosító|0}" />
+      </div>
+    </fieldset>
+  </div>
+
+  <button type="roll" value="&{template:attributeCheck} {{kepesseg=erő}} {{ertek= [[@{ero_10}+?{Módosító|0}]] }} {{kocka= [[1d10]] }}" />
+</div>
+
+<!-- Attribute Check Template -->
+
+<rolltemplate class="sheet-rolltemplate-attributeCheck">
+  <div class="sheet-template-container">
+    {{#rollLess() kocka ertek}}
+      <div class="sheet-template-row sheet-success">
+        <div>Sikeres {{kepesseg}} próba!</div>
+        <div>{{ kocka }} <span style="color: white">vs</span> {{ ertek }}</div>
+      </div>
+    {{/rollLess() kocka ertek}}
+
+    {{#^rollLess() kocka ertek}}
+      <div class="sheet-template-row sheet-failure">
+        <div>Sikertelen {{kepesseg}} próba!</div>
+        <div>{{ kocka }} <span style="color: white">vs</span> {{ ertek }}</div>
+      </div>
+    {{/^rollLess() kocka ertek}}
+  </div>
+</rolltemplate>
+
+<!-- Attribute Check Template -->
+
+
+<script type="text/worker">
+   function above10(value) {
+    return value < 10 ? 0 : value - 10;
+  }
+
+  on(
+    "change:ero change:ero_mod " +
+    "change:allokepesseg change:allokepesseg_mod " +
+    "change:ugyesseg change:ugyesseg_mod " +
+    "change:gyorsasag change:gyorsasag_mod " +
+    "change:egeszseg change:egeszseg_mod " +
+    "change:szepseg change:szepseg_mod " +
+    "change:intelligencia change:inteligencia_mod " +
+    "change:akaratero change:akaratero_mod " +
+    "change:asztral change:asztral_mod",
+
+    (event) => {
+      console.log(event);
+      const attrName = event.sourceAttribute.indexOf("_mod") > -1
+        ? event.sourceAttribute.substring(0, event.sourceAttribute.length - "_mod".length)
+        : event.sourceAttribute;
+
+      console.log(attrName);
+
+      getAttrs([attrName, attrName + "_mod"], (values) => {
+        console.log(values);
+        const value = values[attrName];
+        const mod = values[attrName + "_mod"];
+        const valueBase = Number(value) + Number(mod);
+
+        const value_10 = above10(valueBase);
+        console.log(value_10);
+        setAttrs({
+          //[attrName + "_max"]: valueBase,
+          [attrName + "_10"]: value_10
+        })
+      })
+    }
+  );
+</script>
+
+<script type="text/worker">
+  on("change:egeszseg_10 change:ep_alap", (event) => {
+    console.log(event);
+    getAttrs(["egeszseg_10", "ep_alap"], (values) => {
+      console.log(values.egeszseg_10, values.ep_alap);
+      const ep_max = Number(values.egeszseg_10) + Number(values.ep_alap);
+      console.log("max. Ép", ep_max);
+      setAttrs({ep_max});
+    });
+  });
+
+  on("change:allokepesseg_10 change:akaratero_10 change:fp_alap", (event) => {
+    console.log(event);
+    getAttrs(["allokepesseg_10", "akaratero_10", "fp_alap"], (values) => {
+      console.log(values.allokepesseg_10, values.akaratero_10, values.fp_alap);
+      const fp_max = Number(values.allokepesseg_10) + Number(values.akaratero_10) + Number(values.fp_alap);
+      console.log("max. Fp", fp_max);
+      setAttrs({fp_max});
+    });
+  });
+</script>

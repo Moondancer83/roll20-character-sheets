@@ -1,0 +1,25 @@
+<div class="main">
+  <input name="attr_character_name" type="text" placeholder="Character name"/>
+  <label>Ero</label>
+  <input name="attr_str" value="0" type="number" min="3" max="20"/>
+  <input name="attr_str_mod" value="0" type="number" />
+  <input name="attr_str_max" value="@{str} + @{str_mod}" type="number" disabled="disabled" />
+  <span name="attr_str10"></span>
+  <button type="roll" value="/em makes Strength Check [[1d10]] vs [[@{str10} + ?{Tulajdonság módosító}]]" ></button>
+</div>
+
+<script type="text/worker">
+  function above10(value) {
+    return value < 10 ? 0 : value - 10;
+  }
+
+  on("change:str change:str_mod", (event) => {
+    console.log(event);
+    getAttrs(["str", "str_mod"], (values) => {
+      console.log(values);
+      const str10 = above10(Number(values.str) + Number(values.str_mod));
+      console.log(str10);
+      setAttrs({str10})
+    })
+  });
+</script>

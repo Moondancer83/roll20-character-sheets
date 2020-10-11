@@ -1,0 +1,52 @@
+<div class="main">
+  <div style="display: table">
+    <div style="display: table-header-group">
+      <div style="display: table-row">
+        <div style="display: table-cell">name</div>
+        <div style="display: table-cell">value</div>
+        <div style="display: table-cell">selected</div>
+      </div>
+    </div>
+    <div style="display: table-row-group">
+      <fieldset class="repeating_weapons">
+        <div style="display: table-row">
+          <div style="display: table-cell"><input type="text" name="attr_name" /></div>
+          <div style="display: table-cell"><input type="number" name="attr_value" value="0"/></div>
+          <div style="display: table-cell"><input type="checkbox" name="attr_selected" /></div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <div>
+    <em>Selected</em>
+    <span name="attr_selected_weapon_name" ></span>
+    <span name="attr_selected_weapon_value"></span>
+    <button type="roll" value="/em attacks [[ 1d10 + @{selected_weapon_value} ]]"></button>
+  </div>
+
+</div>
+
+<script type="text/worker">
+
+  on("change:repeating_weapons:selected", function(event) {
+    console.log(event);
+
+    const weaponAttribute = event.sourceAttribute.substring(0, event.sourceAttribute.length - "_selected".length);
+    console.log("Weapon", weaponAttribute);
+
+    getAttrs([weaponAttribute + "_name", weaponAttribute + "_value"], (values) => {
+      console.log(values);
+
+      const update = {
+        selected_weapon_name: values[weaponAttribute + "_name"],
+        selected_weapon_value: values[weaponAttribute + "_value"],
+        [weaponAttribute + "_selected"]: 0
+      };
+      console.log(update)
+
+      setAttrs(update);
+    });
+
+  });
+</script>
