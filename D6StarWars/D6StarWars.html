@@ -1,3 +1,5 @@
+<input  name="attr_version" type="hidden" value="2.35">
+
 <input class="toggle" name="attr_sheettype" type="hidden" value="0">
 
 <input class="selector-switch gmroll" name="attr_gmrollswitch" type="checkbox" value="1">
@@ -22,7 +24,7 @@
   <div class="main-container ship right" style="position:absolute;right: 5px;top:-35px"><h2>Ship</h2></div>
   <div class="main-container shop-inventory right" style="position:absolute;right: 5px;top:-35px"><h2>Shop/Container</h2></div>
 
-  <div style="position:absolute;right: 5px;top:30px"><p class="version"></p></div>
+  <div style="position:absolute;right: 5px;top:30px"><p name="attr_version"></p></div>
 
   <!--  LOGO and dice images -->
   <div style="display:inline-block;position:absolute;left: 150px;padding-bottom:50px">
@@ -104,18 +106,18 @@
     <div class="section pc">
       <div class="2colrow">
         <div class="col" style="display:inline-block;">
-          <label class="toppad">Character Name <input class="right shorttext" name="attr_charactername" style="width:60%"
+          <label class="toppad">Character Name <input class="right reduce-padd" name="attr_charactername" style="width:60%"
                                                       type="text"/></label>
-          <label class="toppad">Type <input class="right shorttext" name="attr_type" style="width:60%"
+          <label class="toppad">Type <input class="right reduce-padd" name="attr_type" style="width:60%"
                                             type="text"/></label>
-          <label class="toppad">Species <input class="right shorttext" name="attr_species" style="width:60%;"
+          <label class="toppad">Species <input class="right reduce-padd" name="attr_species" style="width:60%;"
                                                type="text"/></label>
 
           <div class="physical-params">
-            <label class="toppad">Age <input class="smalltext shorttext" name="attr_age" type="text"/></label>
-            <label class="toppad">Height <input class="smalltext shorttext" name="attr_height" type="text"/></label>
-            <label class="toppad">Weight <input class="smalltext shorttext" name="attr_weight" type="text"/></label>
-            <label class="toppad">Gender <input class="mediumtext shorttext" name="attr_gender" type="text"/></label>
+            <label class="toppad">Age <input class="smalltext reduce-padd" name="attr_age" type="text"/></label>
+            <label class="toppad">Height <input class="smalltext reduce-padd" name="attr_height" type="text"/></label>
+            <label class="toppad">Weight <input class="smalltext reduce-padd" name="attr_weight" type="text"/></label>
+            <label class="toppad">Gender <input class="mediumtext reduce-padd" name="attr_gender" type="text"/></label>
           </div>
         </div>
         <div class="col">
@@ -137,18 +139,18 @@
           <textarea name="attr_specialAbilities" style="width:95%;height:12em"></textarea>
         </div>
         <div class='col'>
-          <label>Move <input class="smallshortnumber" min="0" name="attr_move" type="number" value="10"/></label>
+          <label>Move <input class="60px" min="0" name="attr_move" type="number" value="10"/></label>
           <label>Force Sensitive?
             <select class="smallselect" name="attr_forceSensitive">
               <option value="1">Yes</option>
               <option selected="selected" value="0">No</option>
             </select>
           </label>
-          <label>Force Points <input class="smallshortnumber" min="0" name="attr_forcePoints" type="number" value="1"/></label>
+          <label>Force Points <input class="60px" min="0" name="attr_forcePoints" type="number" value="1"/></label>
           <!---On char creation everyone starts with 1 FP --->
-          <label>Dark Side Points <input class="smallshortnumber" min="0" name="attr_darkSidePoints" type="number"
+          <label>Dark Side Points <input class="40px" min="0" name="attr_darkSidePoints" type="number"
                                          value="0"/></label>
-          <label>Character Points <input class="smallshortnumber" min="0" name="attr_characterPoints" type="number"
+          <label>Character Points <input class="40px" min="0" name="attr_characterPoints" type="number"
                                          value="0"/></label> <!---On char creation everyone starts with 5 CP --->
           <label style="text-decoration:underline; padding-top: 20px">Wound Level
             <select class="mediumselect left" name="attr_WoundLevel" style="width:135px">
@@ -167,7 +169,7 @@
             <tr>
               <th style="vertical-align: top;">Initiative bonus</th>
               <td colspan="2" style="padding-left: 6px; padding-bottom: 40px">
-                <input class="smallnumber shortnumber" min="0" name="attr_initiative" type="number" value="0"/>D+<input class="pipnumber shortnumber" max="2" min="0" name="attr_initiativepip" type="number" value="0"/>
+                <input class="40px" min="0" name="attr_initiative" type="number" value="0"/>D+<input class="40px shortnumber" max="2" min="0" name="attr_initiativepip" type="number" value="0"/>
               </td>
             </tr>
             <tr></tr>
@@ -227,7 +229,7 @@
     <div class="section npc">
       <div class="2colrow">
         <div class="col" style="display:inline-block;">
-          <label class="toppad">NPC Name <input class="right shorttext" name="attr_charactername" style="width:65%"
+          <label class="toppad">NPC Name <input class="right reduce-padd" name="attr_charactername" style="width:65%"
                                                 type="text"></label>
           <label style="text-decoration:underline;">Wound Level
             <select class="mediumselect left" name="attr_WoundLevel" style="width:135px">
@@ -240,8 +242,8 @@
               <option value="5">Mortally Wounded</option>
             </select>
           </label>
-          <label>Initiative bonus<input class="smallnumber shortnumber" min="0" name="attr_initiative" type="number"
-                                        value="0">D+<input class="pipnumber shortnumber" max="2"
+          <label>Initiative bonus<input class="40px" min="0" name="attr_initiative" type="number"
+                                        value="0">D+<input class="40px" max="2"
                                                            min="0" name="attr_initiativepip" type="number"
                                                            value="0"></label>
           <button class="d6-dice rollmod-no" name="roll_init_n" type="roll"
@@ -907,16 +909,16 @@
             <span>Focus</span>
 
             <span>Range</span>
-            <input class="smallnumber" name="attr_sensor_search" type="number"/>
-            <input class="smallnumber" name="attr_sensor_scan" type="number"/>
-            <input class="smallnumber" name="attr_sensor_passive" type="number"/>
-            <input class="smallnumber" name="attr_sensor_focus" type="number"/>
+            <input class="40px" name="attr_sensor_search" type="number"/>
+            <input class="40px" name="attr_sensor_scan" type="number"/>
+            <input class="40px" name="attr_sensor_passive" type="number"/>
+            <input class="40px" name="attr_sensor_focus" type="number"/>
 
             <span>Sensitivity</span>
-            <input class="smallnumber" name="attr_sensor_search_max" type="number"/>
-            <input class="smallnumber" name="attr_sensor_scan_max" type="number"/>
-            <input class="smallnumber" name="attr_sensor_passive_max" type="number"/>
-            <input class="smallnumber" name="attr_sensor_focus_max" type="number"/>
+            <input class="40px" name="attr_sensor_search_max" type="number"/>
+            <input class="40px" name="attr_sensor_scan_max" type="number"/>
+            <input class="40px" name="attr_sensor_passive_max" type="number"/>
+            <input class="40px" name="attr_sensor_focus_max" type="number"/>
           </div>
         </div>
       </div>
@@ -984,21 +986,21 @@
       <fieldset class="repeating_shipweapon">
         <label class="bold">Weapon Name<input name="attr_weapon_name" type="text"></label>
         <div style="margin-bottom:10px;">
-          <span>Scale:<input class="smallnumber" name="attr_weapon_scale" type="text" value=""></span>
+          <span>Scale:<input class="40px" name="attr_weapon_scale" type="text" value=""></span>
           <span>Fire Arc:<input name="attr_weapon_arc" type="text" value=""></span>
           <span>Crew:<input name="attr_weapon_crew" type="text" value=""></span>
         </div>
 
         <div style="margin-bottom:10px;">
           <span>Skill:<input name="attr_weapon_skill" type="text" value=""></span>
-          <span>Fire Control:<input class="smallnumber" name="attr_weapon_fire_control" type="number" value=""> D</span>
+          <span>Fire Control:<input class="40px" name="attr_weapon_fire_control" type="number" value=""> D</span>
           <span style="margin-left: 15px;">Space Range:<input class="mediumnumber" name="attr_weapon_range_space" type="number"
                                                               value=""></span>
-          <span>Atmosphere Range:<input class="smallnumber" name="attr_weapon_range_atmosphere" type="number" value=""></span>
+          <span>Atmosphere Range:<input class="40px" name="attr_weapon_range_atmosphere" type="number" value=""></span>
         </div>
 
         <div style="margin-bottom:10px;">
-          <span>Damage:<input class="smallnumber" name="attr_weapon_damage" type="number" value="3">D+<input
+          <span>Damage:<input class="40px" name="attr_weapon_damage" type="number" value="3">D+<input
               class="smallnumber" name="attr_weapon_damage_pip" type="number" value="0"> <button class="d6-dice"
                                                                                                  name="roll_ship_wpn_dmg"
                                                                                                  type="roll"

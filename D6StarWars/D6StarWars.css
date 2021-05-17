@@ -12,7 +12,7 @@
     content: '2.34';
 }
 
-.charsheet label, h1, h2, h3{
+.charsheet label, h1, h2, h3, h4, h5{
     color:white;
 }
 
@@ -47,24 +47,18 @@
     flex: 1;
 }
 
-.charsheet input[type=number].sheet-pipnumber{
-    width:33px;
-}
 
-.charsheet input[type=number].sheet-smallnumber{
+.charsheet input[type=number].sheet-40px{
     width:40px;
 }
 
-.charsheet input[type=number].sheet-smallshortnumber{
-    width:40px;
+.charsheet input[type=number].sheet-60px{
+    width: 60px;
+    text-align: center;
     padding-top:2px;
     padding-bottom:2px;
     display: inline-block;
     float:right;
-}
-.charsheet input[type=number].sheet-shortnumber{
-    padding-top:2px;
-    padding-bottom:2px;
 }
 
 .charsheet input[type=number].sheet-mediumnumber{
@@ -76,6 +70,7 @@
     width: 80px;
     padding-top: 2px;
     padding-bottom: 2px;
+    text-align: center;
 }
 
 .charsheet input[type=text].sheet-smalltext{
@@ -88,7 +83,7 @@
     margin:0;
 }
 
-.charsheet input[type=text].sheet-shorttext{
+.charsheet input[type=text].sheet-reduce-padd{
     padding-top:2px;
     padding-bottom:2px;
 }
@@ -142,6 +137,7 @@
     margin:0;
     display: inline-block;
     float:right;
+    text-align: center;
 }
 
 .charsheet select.sheet-mediumselect{ /*Used for Wound levels dropdown select*/
@@ -205,26 +201,26 @@
     margin-right: 15px;
 }
 
-input.sheet-main-options.sheet-options-flag + span,/*displays the cog icon*/
-input[type=radio]:checked ~ .sheet-master-container input.sheet-options-flag + span {
+.charsheet input.sheet-main-options.sheet-options-flag + span,/*displays the cog icon*/
+.charsheet input[type=radio]:checked ~ .sheet-master-container input.sheet-options-flag + span {
     font-family: pictos;
     font-style: normal;
 }
 
-div.sheet-main-settings {
+.charsheet div.sheet-main-settings {
     display: none;
     position: relative;
     margin-left: 0;
 }
 
-input.sheet-options-flag:checked ~ div.sheet-main-settings {
+.charsheet input.sheet-options-flag:checked ~ div.sheet-main-settings {
     display: inline-block;
     width: 600px;
     height: 500px;
 }
 
-input.sheet-selector-switch ,
-input.sheet-options-flag:checked ~ div.sheet-main-container {
+.charsheet input.sheet-selector-switch ,
+.charsheet input.sheet-options-flag:checked ~ div.sheet-main-container {
     display: none;
 }
 
@@ -237,28 +233,28 @@ input.sheet-options-flag:checked ~ div.sheet-main-container {
     display: none;
 }
 
-input.sheet-toggle[value="0"] ~ .sheet-master-container .sheet-pc,
-input.sheet-toggle[value="1"] ~ .sheet-master-container .sheet-npc,
-input.sheet-toggle[value="2"] ~ .sheet-master-container .sheet-ship,
-input.sheet-toggle[value="3"] ~ .sheet-master-container .sheet-shop-inventory {
+.charsheet input.sheet-toggle[value="0"] ~ .sheet-master-container .sheet-pc,
+.charsheet input.sheet-toggle[value="1"] ~ .sheet-master-container .sheet-npc,
+.charsheet input.sheet-toggle[value="2"] ~ .sheet-master-container .sheet-ship,
+.charsheet input.sheet-toggle[value="3"] ~ .sheet-master-container .sheet-shop-inventory {
     display: block;
 }
 
-input.sheet-toggle[value="2"] ~ .sheet-master-container .sheet-ship.sheet-shipblock{
+.charsheet input.sheet-toggle[value="2"] ~ .sheet-master-container .sheet-ship.sheet-shipblock{
     display: grid;
 }
-input.sheet-toggle[value="2"] ~ .sheet-master-container .sheet-ship.sheet-shipheader{
+.charsheet input.sheet-toggle[value="2"] ~ .sheet-master-container .sheet-ship.sheet-shipheader{
     display: flex;
 }
 
-input.sheet-background:checked  ~ .sheet-master-container .sheet-background-hide,
-input.sheet-force:checked ~ .sheet-master-container .sheet-force-hide,
-input.sheet-equipment:checked ~ .sheet-master-container .sheet-equipment-hide,
-input.sheet-gmroll:checked ~ .sheet-master-container .sheet-gmroll-hide,
-input.sheet-rollmod:checked ~ .sheet-master-container .sheet-rollmod,
-input.sheet-rollmod:not(:checked) ~ .sheet-master-container .sheet-rollmod-no,
-input.sheet-cptracker:checked ~ .sheet-master-container .sheet-cptracker-hide,
-input.sheet-credittracker:checked ~ .sheet-master-container .sheet-credittracker-hide  {
+.charsheet input.sheet-background:checked  ~ .sheet-master-container .sheet-background-hide,
+.charsheet input.sheet-force:checked ~ .sheet-master-container .sheet-force-hide,
+.charsheet input.sheet-equipment:checked ~ .sheet-master-container .sheet-equipment-hide,
+.charsheet input.sheet-gmroll:checked ~ .sheet-master-container .sheet-gmroll-hide,
+.charsheet input.sheet-rollmod:checked ~ .sheet-master-container .sheet-rollmod,
+.charsheet input.sheet-rollmod:not(:checked) ~ .sheet-master-container .sheet-rollmod-no,
+.charsheet input.sheet-cptracker:checked ~ .sheet-master-container .sheet-cptracker-hide,
+.charsheet input.sheet-credittracker:checked ~ .sheet-master-container .sheet-credittracker-hide  {
     display: none;
 }
 
@@ -266,9 +262,9 @@ input.sheet-credittracker:checked ~ .sheet-master-container .sheet-credittracker
 /*------------- General Styles---------------*/
 /*------------(from GUMSHOE Official)--------*/
 
-input[type=number]::-webkit-inner-spin-button {}
+.charsheet input[type=number]::-webkit-inner-spin-button {}
 
-.sheet-master-container {
+.charsheet .sheet-master-container {
     position: relative;
     padding: 0;
     display: inline-block;
@@ -277,13 +273,13 @@ input[type=number]::-webkit-inner-spin-button {}
     background-repeat: repeat;
 }
 
-.sheet-container {
+.charsheet .sheet-container {
     padding: 5px;
     margin-left: -25px;
     position: relative;
 }
 
-.sheet-main-container {
+.charsheet .sheet-main-container {
     display: inline-block;
     padding-top: 75px;
     margin-left: 0;
@@ -293,8 +289,8 @@ input[type=number]::-webkit-inner-spin-button {}
 /*------------- Options Toggles--------------*/
 /*-----------(from GUMSHOE Official)---------*/
 
-input.sheet-options-flag,
-input.sheet-options-flag + span {
+.charsheet input.sheet-options-flag,
+.charsheet input.sheet-options-flag + span {
     position: absolute;
     top: 2px;
     right: 2px;
@@ -302,12 +298,12 @@ input.sheet-options-flag + span {
     height: 15px;
 }
 
-input.sheet-options-flag {
+.charsheet input.sheet-options-flag {
     z-index: 99;
     opacity: 0;
 }
 
-input.sheet-options-flag + span {
+.charsheet input.sheet-options-flag + span {
     margin-top: 0;
     display: none;
     white-space: nowrap;
@@ -317,7 +313,7 @@ input.sheet-options-flag + span {
     cursor: pointer;
 }
 
-input.sheet-options-flag.sheet-main-options {
+.charsheet input.sheet-options-flag.sheet-main-options {
     width: 30px;
     height: 30px;
     top: 20px;
@@ -325,7 +321,7 @@ input.sheet-options-flag.sheet-main-options {
     z-index: 3;
 }
 
-input.sheet-options-flag.sheet-main-options + span {
+.charsheet input.sheet-options-flag.sheet-main-options + span {
     width: 30px;
     height: 30px;
     top: 20px;
@@ -337,21 +333,21 @@ input.sheet-options-flag.sheet-main-options + span {
     display: block;
 }
 
-input.sheet-options-flag.sheet-main-options:hover + span {
+.charsheet input.sheet-options-flag.sheet-main-options:hover + span {
     opacity: 1;
 }
 
-input.sheet-options-flag:checked + span {
+.charsheet input.sheet-options-flag:checked + span {
     color: white;
     display: block;
 }
 
-input.sheet-selector-switch:checked ~ .sheet-master-container .sheet-content .sheet-options,
-input.sheet-selector-switch:checked ~ .sheet-master-container .sheet-content .sheet-options-flag:checked ~ .sheet-display  {
+.charsheet input.sheet-selector-switch:checked ~ .sheet-master-container .sheet-content .sheet-options,
+.charsheet input.sheet-selector-switch:checked ~ .sheet-master-container .sheet-content .sheet-options-flag:checked ~ .sheet-display  {
     display: none;
 }
 
-input.sheet-selector-switch:checked ~ .sheet-master-container .sheet-content .sheet-options-flag:checked ~ .sheet-options {
+.charsheet input.sheet-selector-switch:checked ~ .sheet-master-container .sheet-content .sheet-options-flag:checked ~ .sheet-options {
     display: block;
 }
 
@@ -370,12 +366,10 @@ input.sheet-selector-switch:checked ~ .sheet-master-container .sheet-content .sh
 .charsheet .sheet-physical-params input {
     display: block;
     width: 100% !important;
+    text-align: center;
 }
 
-.charsheet input[type=number].sheet-smallshortnumber {
-    width: 60px;
-    text-align: right;
-}
+
 
 .charsheet .sheet-custom-roll-table {
     display: table;
@@ -387,31 +381,281 @@ input.sheet-selector-switch:checked ~ .sheet-master-container .sheet-content .sh
     height: 18px;
 }
 
+
+/* Attributes */
+.charsheet .sheet-attributes {
+    border: 2px solid white;
+    margin: 5px;
+    padding: 10px;
+}
+
+.charsheet .sheet-attribute {
+    margin-bottom: 5px;
+}
+
+/* Unified Dice */
+.charsheet .sheet-unified-dice {
+    width: 32px;
+    height: 34px;
+    line-height: 34px;
+}
+.charsheet .sheet-unified-dice-text {
+    display: inline-flex;
+    width: calc(100% - 225px);
+    height: 40px;
+    margin: 0;
+    padding: 0 5px;
+    font-size: x-large;
+    vertical-align: top;
+    line-height: 40px;
+}
+
+.charsheet input.sheet-gmroll:checked ~ .sheet-master-container .sheet-unified-dice-text {
+    width: calc(100% - 181px);
+}
+
+.charsheet .sheet-unified-dice-roll {
+}
+
+.charsheet button[type=roll].sheet-unified-dice-roll {
+    margin: 0;
+}
+
+.charsheet input[type="number"].sheet-unified-dice-input {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    width: 46px;
+    padding: 2px 4px;
+}
+
+.charsheet .sheet-unified-dice-middle {
+    display: inline-flex;
+    width: 24px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.6em;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.charsheet input[type="number"].sheet-unified-dice-pip {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    width: 46px;
+    padding: 2px 4px;
+}
+
+/* Skill */
+.charsheet .sheet-skill {
+    height: 28px;
+    margin: 4px 0;
+}
+.charsheet .sheet-skill * {
+    height: 28px;
+    line-height: 26px;
+    width: 100%;
+}
+.charsheet .sheet-skill label {
+    padding: 0 1px;
+}
+
+.charsheet .sheet-skill .sheet-unified-dice-text {
+    display: inline-flex;
+    width: calc(100% - 217px);
+    height: 28px;
+    font-size: medium;
+    font-weight: normal;
+    vertical-align: top;
+    line-height: 28px;
+}
+
+.charsheet input.sheet-gmroll:checked ~ .sheet-master-container .sheet-skill .sheet-unified-dice-text {
+    width: calc(100% - 173px);
+}
+
+.charsheet .sheet-skill button[type=roll].sheet-unified-dice-roll {
+    width: 32px;
+    height: 24px;
+    padding-top: 0;
+}
+
+.charsheet .sheet-skill input[type="number"].sheet-unified-dice-input {
+    width: 46px;
+    height: 28px;
+    font-size: inherit;
+    text-align: center;
+}
+
+.charsheet .sheet-skill .sheet-unified-dice-middle {
+    display: inline-flex;
+    width: 24px;
+    height: 28px;
+    font-size: medium;
+    vertical-align: top;
+    line-height: 28px;
+}
+
+.charsheet .repcontrol {
+    height: 28px;
+}
+
+.charsheet .sheet-skill input[type="number"].sheet-unified-dice-pip {
+    display: inline-flex;
+    width: 46px;
+    height: 28px;
+    font-size: inherit;
+    text-align: center;
+}
+
+
+.charsheet .sheet-redtxt {
+    bottom: -3px;
+    right: 5px;
+}
+
+
+/* Edit Mode */
+.charsheet .editmode .sheet-skill {
+    margin: 4px 36px 4px 34px
+}
+
+.charsheet .editmode .sheet-unified-dice-roll,
+.charsheet .editmode .sheet-unified-dice-input,
+.charsheet .editmode .sheet-unified-dice-middle,
+.charsheet .editmode .sheet-unified-dice-pip {
+    display: none !important;
+}
+
+.charsheet .editmode .sheet-unified-dice-text {
+    width: 100% !important;
+}
+.charsheet .editmode .sheet-armor.sheet-row:not(:first-of-type) .sheet-cell:not(:first-of-type),
+.charsheet .editmode .sheet-weapon.sheet-row:not(:first-of-type) .sheet-cell:not(:first-of-type) {
+    display: none;
+}
+.charsheet .editmode .sheet-armor.sheet-row:not(:first-of-type) .sheet-cell:first-of-type,
+.charsheet .editmode .sheet-weapon.sheet-row:not(:first-of-type) .sheet-cell:first-of-type {
+    width: 100%;
+}
+.charsheet .sheet-force .editmode .sheet-skill input[type=checkbox] {
+    display: none;
+}
+
+
+/* Weapons & Armors */
+.charsheet .sheet-armor.sheet-row:first-of-type .sheet-cell,
+.charsheet .sheet-weapon.sheet-row:first-of-type .sheet-cell {
+    height: 36px;
+    border-bottom: 5px solid white;
+}
+.charsheet .sheet-armor.sheet-row:first-of-type .sheet-cell-4,
+.charsheet .sheet-weapon.sheet-row:first-of-type .sheet-cell-4 {
+    vertical-align: bottom;
+}
+.charsheet .sheet-cell {
+    display: inline-block;
+    margin: 0 4px;
+    text-align: center;
+}
+.charsheet .sheet-cell:first-of-type {
+    margin-left: 0;
+}
+.charsheet .sheet-cell:last-of-type {
+    margin-right: 0;
+}
+.charsheet .sheet-armor.sheet-row:first-of-type .sheet-cell,
+.charsheet .sheet-weapon.sheet-row:first-of-type .sheet-cell {
+    vertical-align: top;
+    line-height: 36px;
+    font-weight: bold;
+}
+.charsheet .sheet-weapon.sheet-row:first-of-type .sheet-cell.sheet-cell-4 {
+    line-height: inherit;
+}
+.charsheet .sheet-cell-name {
+    min-width: 50px;
+    width: calc(100% - 743px);
+}
+.charsheet .sheet-cell-name .sheet-unified-dice-text {
+    width: 100%;
+}
+.charsheet .sheet-cell-dice {
+    width: 197px;
+}
+.charsheet .sheet-cell-1 {
+    width: 46px;
+}
+.charsheet .sheet-cell-2 {
+    width: 84px;
+}
+.charsheet .sheet-cell-4 {
+    width: 198px;
+}
+.charsheet .sheet-armor .sheet-cell-4 {
+    width: 218px;
+}
+.charsheet .sheet-cell-4 .sheet-part {
+    display: inline-block;
+    width: 20%;
+}
+.charsheet .sheet-cell-5 {
+    width: 219px;
+}
+
+/* Force */
+.charsheet .sheet-force .sheet-skill .sheet-unified-dice-text {
+    width: calc(100% - 139px);
+}
+
+.charsheet .sheet-force .sheet-skill input[type=checkbox],
+.charsheet .sheet-powers input[type=checkbox] {
+    display: inline-block;
+    height: 28px;
+    width: 44px;
+}
+.charsheet .sheet-force-powers-description {
+    width: 100%;
+    height: 14em;
+    resize: vertical;
+}
+.charsheet table.sheet-powers {
+    width: 100%;
+}
+.charsheet table.sheet-powers td {
+    text-align: end;
+}
+.charsheet .sheet-force-hide .sheet-weapon .sheet-cell.sheet-cell-name {
+    width: calc(100% - 418px);
+}
+
+
 /*-------------------------------------------*/
 /*------------- Ship Section-----------------*/
 
-div.sheet-ship .sheet-wborder{
+.charsheet div.sheet-ship .sheet-wborder{
     border: 2px solid white;
     padding: 5px;
 }
 
-div.sheet-shipheader{
+.charsheet div.sheet-shipheader{
     display: flex;
     justify-content: center;
     flex-flow: row nowrap;
 }
 
-div.sheet-shipheader span:nth-child(1) input[type="text"]{
+.charsheet div.sheet-shipheader span:nth-child(1) input[type="text"]{
     width: 300px;
 }
-div.sheet-shipheader span:nth-child(2) input[type="text"]{
+.charsheet div.sheet-shipheader span:nth-child(2) input[type="text"]{
     width: 150px;
 }
-div.sheet-shipheader span:nth-child(3) input[type="text"]{
+.charsheet div.sheet-shipheader span:nth-child(3) input[type="text"]{
     width: 150px;
 }
 
-div.sheet-shipblock{
+.charsheet div.sheet-shipblock{
     padding: 5px;
     display: grid;
     grid-template-columns: 3fr 7fr;
@@ -425,23 +669,23 @@ div.sheet-shipblock{
     height: 550px;
 }
 
-div.sheet-shipblock div.sheet-price{
+.charsheet div.sheet-shipblock div.sheet-price{
     grid-area: price;
     flex-flow: column nowrap;
     justify-content: space-between;
 }
 
-div.sheet-shipblock div.sheet-price span{
+.charsheet div.sheet-shipblock div.sheet-price span{
     width: 100px;
 }
 
-div.sheet-shipblock div.sheet-price div{
+.charsheet div.sheet-shipblock div.sheet-price div{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
 }
 
-div.sheet-shipblock div.sheet-priceblock div.sheet-flex-row{
+.charsheet div.sheet-shipblock div.sheet-priceblock div.sheet-flex-row{
     flex-flow: row nowrap;
     justify-content: space-around;
     margin: 3px;
@@ -449,28 +693,28 @@ div.sheet-shipblock div.sheet-priceblock div.sheet-flex-row{
 
 
 /* Performance */
-div.sheet-shipblock div.sheet-perf{
+.charsheet div.sheet-shipblock div.sheet-perf{
     grid-area: perf;
     padding: 5px;
 }
 
-div.sheet-shipblock div.sheet-perf .sheet-medium,
-div.sheet-shipblock div.sheet-sensor .sheet-medium,
-div.sheet-shipblock div.sheet-hyperdrive input[type="text"],
-div.sheet-shipblock div.sheet-price input[type="text"]{
+.charsheet div.sheet-shipblock div.sheet-perf .sheet-medium,
+.charsheet div.sheet-shipblock div.sheet-sensor .sheet-medium,
+.charsheet div.sheet-shipblock div.sheet-hyperdrive input[type="text"],
+.charsheet div.sheet-shipblock div.sheet-price input[type="text"]{
     width: 80px;
 }
 
-div.sheet-shipblock div.sheet-perf label:not(.sheet-title){
+.charsheet div.sheet-shipblock div.sheet-perf label:not(.sheet-title){
     font-size: 0.8em;
 }
 
-div.sheet-shipblock div.sheet-perf div.sheet-perf,
-div.sheet-shipblock div.sheet-perf-block div.sheet-flex-col{
+.charsheet div.sheet-shipblock div.sheet-perf div.sheet-perf,
+.charsheet div.sheet-shipblock div.sheet-perf-block div.sheet-flex-col{
     display: flex;
     flex-flow: column nowrap;
 }
-div.sheet-shipblock div.sheet-perf div.sheet-perf-block{
+.charsheet div.sheet-shipblock div.sheet-perf div.sheet-perf-block{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -478,18 +722,18 @@ div.sheet-shipblock div.sheet-perf div.sheet-perf-block{
 }
 
 /* Sensors */
-div.sheet-shipblock div.sheet-sensor{
+.charsheet div.sheet-shipblock div.sheet-sensor{
     grid-area: sensor;
     border: 2px solid white;
 }
 
-div.sheet-shipblock div.sheet-sensor div.sheet-flex-row{
+.charsheet div.sheet-shipblock div.sheet-sensor div.sheet-flex-row{
     display: flex;
     flex-flow: row nowrap;
 }
 
 
-div.sheet-shipblock div.sheet-sensor div.sheet-grid{
+.charsheet div.sheet-shipblock div.sheet-sensor div.sheet-grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -499,24 +743,24 @@ div.sheet-shipblock div.sheet-sensor div.sheet-grid{
 }
 
 /* Hyperdrive */
-div.sheet-shipblock div.sheet-hyperdrive{
+.charsheet div.sheet-shipblock div.sheet-hyperdrive{
     grid-area: hyperdrive;
     display: flex;
     flex-flow: column nowrap;
 }
 
-div.sheet-shipblock div.sheet-hyperdrive div{
+.charsheet div.sheet-shipblock div.sheet-hyperdrive div{
     display: flex;
     flex-flow: row nowrap;
     font-size: 0.8em;
 }
 
-div.sheet-shipblock div.sheet-hyperdrive .sheet-crew{
+.charsheet div.sheet-shipblock div.sheet-hyperdrive .sheet-crew{
     display: flex;
     flex-flow: column nowrap;
 }
 
-div.sheet-shipblock div.sheet-hyperdrive .sheet-hyper-grid{
+.charsheet div.sheet-shipblock div.sheet-hyperdrive .sheet-hyper-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -525,33 +769,34 @@ div.sheet-shipblock div.sheet-hyperdrive .sheet-hyper-grid{
     width: 440px;
 }
 
-div.sheet-shipblock div.sheet-hyper-grid label{
+.charsheet div.sheet-shipblock div.sheet-hyper-grid label{
     width: 110px;
 }
 
-div.sheet-shipblock div.sheet-hyperdrive input[type="text"]{
+.charsheet div.sheet-shipblock div.sheet-hyperdrive input[type="text"]{
     height: 22px;
 }
 
 
-div.sheet-shipblock div.sheet-consume{
+.charsheet div.sheet-shipblock div.sheet-consume{
     grid-area: consume;
 }
 
-div.sheet-shipblock div.sheet-dura{
+.charsheet div.sheet-shipblock div.sheet-dura{
     grid-area: dura;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-div.sheet-shipblock div.sheet-dura label{
+.charsheet div.sheet-shipblock div.sheet-dura label{
     width:80px;
 }
 
-div.sheet-section.sheet-ship div.sheet-other{
+.charsheet div.sheet-section.sheet-ship div.sheet-other{
     margin-bottom: 10px;
 }
+
 
 
 /*-------------------------------------------*/
@@ -774,249 +1019,3 @@ div.sheet-section.sheet-ship div.sheet-other{
  background-color:#eee;
 }
 
-/* Attributes */
-.sheet-attributes {
-    border: 2px solid white;
-    margin: 5px;
-    padding: 10px;
-}
-
-.sheet-attribute {
-    margin-bottom: 5px;
-}
-
-/* Unified Dice */
-.sheet-unified-dice {
-    width: 32px;
-    height: 34px;
-    line-height: 34px;
-}
-.sheet-unified-dice-text {
-    display: inline-flex;
-    width: calc(100% - 225px);
-    height: 40px;
-    margin: 0;
-    padding: 0 5px;
-    font-size: x-large;
-    vertical-align: top;
-    line-height: 40px;
-}
-
-input.sheet-gmroll:checked ~ .sheet-master-container .sheet-unified-dice-text {
-    width: calc(100% - 181px);
-}
-
-.sheet-unified-dice-roll {
-}
-
-button[type=roll].sheet-unified-dice-roll {
-    margin: 0;
-}
-
-input[type="number"].sheet-unified-dice-input {
-    font-size: large;
-    font-weight: bold;
-    text-align: right;
-    width: 46px;
-    padding: 2px 4px;
-}
-
-.sheet-unified-dice-middle {
-    display: inline-flex;
-    width: 24px;
-    height: 40px;
-    line-height: 40px;
-    font-size: large;
-    vertical-align: top;
-}
-
-input[type="number"].sheet-unified-dice-pip {
-    font-size: large;
-    font-weight: bold;
-    text-align: right;
-    width: 46px;
-    padding: 2px 4px;
-}
-
-/* Skill */
-.sheet-skill {
-    height: 28px;
-    margin: 4px 0;
-}
-.sheet-skill * {
-    height: 28px;
-    line-height: 26px;
-    width: 100%;
-}
-.sheet-skill label {
-    padding: 0 1px;
-}
-
-.sheet-skill .sheet-unified-dice-text {
-    display: inline-flex;
-    width: calc(100% - 217px);
-    height: 28px;
-    font-size: medium;
-    font-weight: normal;
-    vertical-align: top;
-    line-height: 28px;
-}
-
-input.sheet-gmroll:checked ~ .sheet-master-container .sheet-skill .sheet-unified-dice-text {
-    width: calc(100% - 173px);
-}
-
-.sheet-skill button[type=roll].sheet-unified-dice-roll {
-    width: 32px;
-    height: 24px;
-    padding-top: 0;
-}
-
-.sheet-skill input[type="number"].sheet-unified-dice-input {
-    width: 46px;
-    height: 28px;
-    font-size: inherit;
-    text-align: right;
-}
-
-.sheet-skill .sheet-unified-dice-middle {
-    display: inline-flex;
-    width: 24px;
-    height: 28px;
-    font-size: medium;
-    vertical-align: top;
-    line-height: 28px;
-}
-
-.repcontrol {
-    height: 28px;
-}
-
-.sheet-skill input[type="number"].sheet-unified-dice-pip {
-    display: inline-flex;
-    width: 46px;
-    height: 28px;
-    font-size: inherit;
-    text-align: right;
-}
-
-
-.charsheet .sheet-redtxt {
-    bottom: -3px;
-    right: 5px;
-}
-
-
-/* Edit Mode */
-.editmode .sheet-skill {
-    margin: 4px 36px 4px 34px
-}
-
-.editmode .sheet-unified-dice-roll,
-.editmode .sheet-unified-dice-input,
-.editmode .sheet-unified-dice-middle,
-.editmode .sheet-unified-dice-pip {
-    display: none !important;
-}
-
-.editmode .sheet-unified-dice-text {
-    width: 100% !important;
-}
-.editmode .sheet-armor.sheet-row:not(:first-of-type) .sheet-cell:not(:first-of-type),
-.editmode .sheet-weapon.sheet-row:not(:first-of-type) .sheet-cell:not(:first-of-type) {
-    display: none;
-}
-.editmode .sheet-armor.sheet-row:not(:first-of-type) .sheet-cell:first-of-type,
-.editmode .sheet-weapon.sheet-row:not(:first-of-type) .sheet-cell:first-of-type {
-    width: 100%;
-}
-.sheet-force .editmode .sheet-skill input[type=checkbox] {
-    display: none;
-}
-
-
-/* Weapons & Armors */
-.sheet-armor.sheet-row:first-of-type .sheet-cell,
-.sheet-weapon.sheet-row:first-of-type .sheet-cell {
-    height: 36px;
-    border-bottom: 5px solid white;
-}
-.sheet-armor.sheet-row:first-of-type .sheet-cell-4,
-.sheet-weapon.sheet-row:first-of-type .sheet-cell-4 {
-    vertical-align: bottom;
-}
-.sheet-cell {
-    display: inline-block;
-    margin: 0 4px;
-    text-align: center;
-}
-.sheet-cell:first-of-type {
-    margin-left: 0;
-}
-.sheet-cell:last-of-type {
-    margin-right: 0;
-}
-.sheet-armor.sheet-row:first-of-type .sheet-cell,
-.sheet-weapon.sheet-row:first-of-type .sheet-cell {
-    vertical-align: top;
-    line-height: 36px;
-    font-weight: bold;
-}
-.sheet-weapon.sheet-row:first-of-type .sheet-cell.sheet-cell-4 {
-    line-height: inherit;
-}
-.sheet-cell-name {
-    min-width: 50px;
-    width: calc(100% - 743px);
-}
-.sheet-cell-name .sheet-unified-dice-text {
-    width: 100%;
-}
-.sheet-cell-dice {
-    width: 197px;
-}
-.sheet-cell-1 {
-    width: 46px;
-}
-.sheet-cell-2 {
-    width: 84px;
-}
-.sheet-cell-4 {
-    width: 198px;
-}
-.sheet-armor .sheet-cell-4 {
-    width: 218px;
-}
-.sheet-cell-4 .sheet-part {
-    display: inline-block;
-    width: 20%;
-}
-.sheet-cell-5 {
-    width: 219px;
-}
-
-/* Force */
-.sheet-force .sheet-skill .sheet-unified-dice-text {
-    width: calc(100% - 139px);
-}
-
-.sheet-force .sheet-skill input[type=checkbox],
-.sheet-powers input[type=checkbox] {
-    display: inline-block;
-    height: 28px;
-    width: 44px;
-}
-.sheet-force-powers-description {
-    width: 100%;
-    height: 14em;
-    resize: vertical;
-}
-table.sheet-powers {
-    width: 100%;
-}
-table.sheet-powers td {
-    text-align: end;
-}
-.sheet-force-hide .sheet-weapon .sheet-cell.sheet-cell-name {
-    width: calc(100% - 418px);
-}
