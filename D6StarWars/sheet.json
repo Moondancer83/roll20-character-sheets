@@ -102,5 +102,5 @@
       "description": "How many Force Points a character starts with."
     }
   ],
-  "legacy": true
+  "legacy": false
 }
