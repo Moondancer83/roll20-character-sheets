@@ -19,17 +19,17 @@
 
   <!-- Shows which sheet type is selected -->
   <div class="main-settings" style="height:1em;text-align:right;float:right;"><h2>Settings</h2></div>
-  <div class="main-container pc right" style="position:absolute;right: 5px;top:-35px"><h2>Player Sheet</h2></div>
-  <div class="main-container npc right" style="position:absolute;right: 5px;top:-35px"><h2>NPC Sheet</h2></div>
-  <div class="main-container ship right" style="position:absolute;right: 5px;top:-35px"><h2>Ship</h2></div>
-  <div class="main-container shop-inventory right" style="position:absolute;right: 5px;top:-35px"><h2>Shop/Container</h2></div>
+  <div class="main-container sheettype-title pc right"><h2>Player Sheet</h2></div>
+  <div class="main-container sheettype-title npc right"><h2>NPC Sheet</h2></div>
+  <div class="main-container sheettype-title ship right"><h2>Ship</h2></div>
+  <div class="main-container sheettype-title shop-inventory right"><h2>Shop/Container</h2></div>
 
-  <div style="position:absolute;right: 5px;top:30px"><p name="attr_version"></p></div>
+  <div class="version-top"><p name="attr_version"></p></div>
 
   <!--  LOGO and dice images -->
-  <div style="display:inline-block;position:absolute;left: 150px;padding-bottom:50px">
-    <img alt="logo"
-         src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/D6StarWars/logo.png" style="max-height: 80px;" title="This is where the fun begins."/>
+  <div class="logo">
+    <img alt="logo" class="logo"
+         src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/D6StarWars/logo.png" title="This is where the fun begins."/>
   </div>
 
   <!-- ---------------------------------------------- SETTINGS MENU ------------------------------------------------- -->
@@ -104,14 +104,12 @@
     <!-- --------------------------------------------- Player Core info -------------------------------------------- -->
 
     <div class="section pc">
-      <div class="2colrow">
-        <div class="col" style="display:inline-block;">
-          <label class="toppad">Character Name <input class="right reduce-padd" name="attr_charactername" style="width:60%"
+      <div class="sheet-2colrow">
+        <div class="sheet-col lineblck">
+          <label class="toppad">Character Name <input class="right reduce-padd 60p" name="attr_charactername"
                                                       type="text"/></label>
-          <label class="toppad">Type <input class="right reduce-padd" name="attr_type" style="width:60%"
-                                            type="text"/></label>
-          <label class="toppad">Species <input class="right reduce-padd" name="attr_species" style="width:60%;"
-                                               type="text"/></label>
+          <label class="toppad">Type <input class="right reduce-padd 60p" name="attr_type" type="text"/></label>
+          <label class="toppad">Species <input class="right reduce-padd 60p" name="attr_species" type="text"/></label>
 
           <div class="physical-params">
             <label class="toppad">Age <input class="smalltext reduce-padd" name="attr_age" type="text"/></label>
@@ -120,12 +118,11 @@
             <label class="toppad">Gender <input class="mediumtext reduce-padd" name="attr_gender" type="text"/></label>
           </div>
         </div>
-        <div class="col">
+        <div class="sheet-col">
           <label>Physical Description
-            <textarea name="attr_Physical_Description" style="height:6em; width:97%; margin-top: 3px;"></textarea>
+            <textarea class="description-phys" name="attr_Physical_Description"></textarea>
           </label>
-          <label>Credits <input class="credits" min="0" name="attr_credits" style="width: 60%; float: right; text-align: right;"
-                                type="number"/></label>
+          <label>Credits <input class="credits totalcredits" min="0" name="attr_credits" type="number"/></label>
         </div>
       </div>
     </div>
@@ -133,12 +130,12 @@
     <!-- ------------------------------------------- Player Secondary Info ----------------------------------------- -->
 
     <div class="section pc">
-      <div class='3colrow'>
-        <div class='col'>
+      <div class="sheet-3colrow">
+        <div class="sheet-col">
           <label class="areaLabel">Special Abilities</label>
-          <textarea name="attr_specialAbilities" style="width:95%;height:12em"></textarea>
+          <textarea class="specabilities" name="attr_specialAbilities"></textarea>
         </div>
-        <div class='col'>
+        <div class="sheet-col">
           <label>Move <input class="60px" min="0" name="attr_move" type="number" value="10"/></label>
           <label>Force Sensitive?
             <select class="smallselect" name="attr_forceSensitive">
@@ -148,12 +145,12 @@
           </label>
           <label>Force Points <input class="60px" min="0" name="attr_forcePoints" type="number" value="1"/></label>
           <!---On char creation everyone starts with 1 FP --->
-          <label>Dark Side Points <input class="40px" min="0" name="attr_darkSidePoints" type="number"
+          <label>Dark Side Points <input class="60px" min="0" name="attr_darkSidePoints" type="number"
                                          value="0"/></label>
-          <label>Character Points <input class="40px" min="0" name="attr_characterPoints" type="number"
+          <label>Character Points <input class="60px" min="0" name="attr_characterPoints" type="number"
                                          value="0"/></label> <!---On char creation everyone starts with 5 CP --->
-          <label style="text-decoration:underline; padding-top: 20px">Wound Level
-            <select class="mediumselect left" name="attr_WoundLevel" style="width:135px">
+          <label class="wound" style="padding-top: 20px">Wound Level
+            <select class="mediumselect left wound" name="attr_WoundLevel">
               <option selected="selected" value="0">Healthy</option>
               <option value="1">Stunned</option>
               <option value="1">Wounded</option>
@@ -164,11 +161,11 @@
             </select>
           </label>
         </div>
-        <div class='col'>
+        <div class="sheet-col">
           <table class="custom-roll-table">
             <tr>
-              <th style="vertical-align: top;">Initiative bonus</th>
-              <td colspan="2" style="padding-left: 6px; padding-bottom: 40px">
+              <th class="init">Initiative bonus</th>
+              <td colspan="2" class="init">
                 <input class="40px" min="0" name="attr_initiative" type="number" value="0"/>D+<input class="40px shortnumber" max="2" min="0" name="attr_initiativepip" type="number" value="0"/>
               </td>
             </tr>
@@ -208,7 +205,7 @@
               </td>
             </tr>
             <tr>
-              <th>Character points roll</th>
+              <th>Char Points Roll</th>
               <td>
                 <button class="d6-dice" name="roll_charptroll" type="roll"
                         value="&{template:black} {{name=Character points roll}} {{Roll=[[?{Number of char points to spend on roll|1|2|3|4|5}d6!cf0cs6]]}}"></button>
@@ -227,12 +224,12 @@
     <!-- ---------------------------------------------- NPC info block --------------------------------------------- -->
 
     <div class="section npc">
-      <div class="2colrow">
-        <div class="col" style="display:inline-block;">
-          <label class="toppad">NPC Name <input class="right reduce-padd" name="attr_charactername" style="width:65%"
+      <div class="sheet-2colrow">
+        <div class="sheet-col first-col">
+          <label class="toppad">NPC Name <input class="right reduce-padd npcname" name="attr_charactername"
                                                 type="text"></label>
-          <label style="text-decoration:underline;">Wound Level
-            <select class="mediumselect left" name="attr_WoundLevel" style="width:135px">
+          <label class="wound">Wound Level
+            <select class="mediumselect left wound" name="attr_WoundLevel">
               <option selected="selected" value="0">Healthy</option>
               <option value="1">Stunned</option>
               <option value="1">Wounded</option>
@@ -264,9 +261,9 @@
             <span class="redtxt">(GM)</span>C Roll
           </button>
         </div>
-        <div class="col">
+        <div class="sheet-col">
           <label>Physical Description & Other Info</label>
-          <textarea name="attr_Physical_Description" style="height:6em;width:97%"></textarea>
+          <textarea class="description" name="attr_Physical_Description"></textarea>
         </div>
       </div>
     </div>
@@ -278,7 +275,7 @@
     <!-- --------------------------------------------- Attributes&Skills ------------------------------------------- -->
 
     <div class="section pc npc">
-      <label style="text-align: center">Attributes & Skills</label>
+      <label class="txtcenter">Attributes & Skills</label>
       <div class="flex-box">
         <div class="flex-col">
 
@@ -466,7 +463,7 @@
     <!-- ---------------------------------------------- Weapons & Armor -------------------------------------------- -->
 
     <div class="section pc npc shop-inventory">
-      <label style="text-align: center">Weapon & Armor</label>
+      <label class="txtcenter">Weapon & Armor</label>
       <div>
         <div class="weapon row">
           <div class="cell cell-name">Weapon</div>
@@ -511,8 +508,8 @@
       <div>
         <div class="armor row">
           <div class="cell cell-name">Armor</div>
-          <div class="cell cell-dice">Physical <span style="font-family: 'Pictos Custom'; font-size: large">t</span></div>
-          <div class="cell cell-dice">Energy <span style="font-family: 'Pictos'; font-size: large">e</span></div>
+          <div class="cell cell-dice">Physical <span class="physical"></span></div>
+          <div class="cell cell-dice">Energy <span class="energy"></span></div>
           <div class="cell cell-2">Str</div>
           <div class="cell cell-4">Other</div>
         </div>
@@ -558,7 +555,7 @@
     <!-- ----------------------------------------------- Force Section --------------------------------------------- -->
 
     <div class="section force-hide pc npc">
-      <label style="text-align: center">Force Section</label>
+      <label class="txtcenter">Force Section</label>
 
       <div class="flex-box">
         <div class="flex-col">
@@ -716,18 +713,18 @@
     <!-- ------------------------------------------------ Equipment PC --------------------------------------------- -->
 
     <div class="section equipment-hide pc shop-inventory">
-      <label style="text-align: center;">Equipment</label>
+      <label class="txtcenter">Equipment</label>
       <table style="width:97%">
         <tr>
           <td style="text-align: right;">
             <textarea name="attr_geartext1"></textarea>
             <textarea name="attr_geartext2"></textarea>
           </td>
-          <td style="text-align: center;">
+          <td class="txtcenter">
             <textarea name="attr_geartext3"></textarea>
             <textarea name="attr_geartext4"></textarea>
           </td>
-          <td style="text-align: Left;">
+          <td style="text-align: left;">
             <textarea name="attr_geartext5"></textarea>
             <textarea name="attr_geartext6"></textarea>
           </td>
@@ -738,28 +735,29 @@
     <!-- ------------------------------------------------ Equipment NPC -------------------------------------------- -->
 
     <div class="section equipment-hide npc">
-      <label style="text-align: center">Equipment</label>
-      <textarea name="attr_geartext1" style="height:7em;width:96%"></textarea>
+      <label class="txtcenter">Equipment</label>
+      <textarea name="attr_geartext1"></textarea>
     </div>
 
     <!-- ------------------------------------------- Background & extended info ------------------------------------- -->
 
     <div class="section background-hide pc npc">
-      <label style="text-align: center">Background and extended info</label>
+      <label class="txtcenter">Background and extended info</label>
       <table>
         <tr>
-          <td style="width:33.33%;"><label>Background</label>
+          <td class="33p">
+            <label>Background</label>
             <div>
               <textarea name="attr_background"></textarea>
             </div>
           </td>
-          <td style="width:33.33%;">
+          <td class="33p">
             <label>Personality</label>
             <div>
               <textarea name="attr_personality"></textarea>
             </div>
           </td>
-          <td style="width:33.33%;">
+          <td class="33p">
             <label>Objectives</label>
             <div>
               <textarea name="attr_objectives"></textarea>
@@ -796,8 +794,8 @@
       <span class="bold">Character Point Balance:</span>
       <span class="num" name="attr_cp_spent"></span>
       <fieldset class="repeating_cptable">
-        <div style="padding-top: 8px;">
-          <input name="attr_cp_desc" style="width:80%;" type="text">
+        <div>
+          <input name="attr_cp_desc" type="text">
           <input name="attr_cp_amount" type="number">
         </div>
       </fieldset>
@@ -810,9 +808,9 @@
       <span class="bold">Credit Balance:</span>
       <span class="num credits" name="attr_credit_spent"></span>
       <fieldset class="repeating_credittable">
-        <div style="padding-top: 8px;">
-          <input name="attr_credit_desc" style="width:80%;" type="text">
-          <input name="attr_credit_amount" style="width:100px;" type="number">
+        <div>
+          <input name="attr_credit_desc" type="text">
+          <input name="attr_credit_amount" type="number">
         </div>
       </fieldset>
     </div>
@@ -872,7 +870,7 @@
         <label class="title">Performance</label>
         <div class="perf-block">
           <div class="flex-col wborder" style="margin-right: 7px;">
-            <label style="width:80px;">Crew Station:</label>
+            <label class="medium">Crew Station:</label>
             <input class="medium" name="attr_crew_station_performance" type="text">
           </div>
           <div class="flex-col">
@@ -985,26 +983,26 @@
       <label>Ship Weapons</label>
       <fieldset class="repeating_shipweapon">
         <label class="bold">Weapon Name<input name="attr_weapon_name" type="text"></label>
-        <div style="margin-bottom:10px;">
+        <div>
           <span>Scale:<input class="40px" name="attr_weapon_scale" type="text" value=""></span>
           <span>Fire Arc:<input name="attr_weapon_arc" type="text" value=""></span>
           <span>Crew:<input name="attr_weapon_crew" type="text" value=""></span>
         </div>
 
-        <div style="margin-bottom:10px;">
+        <div>
           <span>Skill:<input name="attr_weapon_skill" type="text" value=""></span>
           <span>Fire Control:<input class="40px" name="attr_weapon_fire_control" type="number" value=""> D</span>
-          <span style="margin-left: 15px;">Space Range:<input class="mediumnumber" name="attr_weapon_range_space" type="number"
+          <span class="range">Space Range:<input class="mediumnumber" name="attr_weapon_range_space" type="number"
                                                               value=""></span>
           <span>Atmosphere Range:<input class="40px" name="attr_weapon_range_atmosphere" type="number" value=""></span>
         </div>
 
-        <div style="margin-bottom:10px;">
-          <span>Damage:<input class="40px" name="attr_weapon_damage" type="number" value="3">D+<input
-              class="smallnumber" name="attr_weapon_damage_pip" type="number" value="0"> <button class="d6-dice"
-                                                                                                 name="roll_ship_wpn_dmg"
-                                                                                                 type="roll"
-                                                                                                 value="&{template:swd6} {{name=Weapon: @{weapon_name} }} {{subtitle=Ship: @{ship_name} }} {{Roll=[[(@{weapon_damage}- 1)d6cf0cs0 + @{weapon_damage_pip} +(1d6@{wilddie})]] damage}}">DMG</button></span>
+        <div>
+          <span>Damage:
+            <input class="40px" name="attr_weapon_damage" type="number" value="3">D+<input
+              class="smallnumber" name="attr_weapon_damage_pip" type="number" value="0">
+            <button class="d6-dice" name="roll_ship_wpn_dmg" type="roll" value="&{template:swd6} {{name=Weapon: @{weapon_name} }} {{subtitle=Ship: @{ship_name} }} {{Roll=[[(@{weapon_damage}- 1)d6cf0cs0 + @{weapon_damage_pip} +(1d6@{wilddie})]] damage}}">DMG</button>
+          </span>
         </div>
 
       </fieldset>
@@ -1025,8 +1023,7 @@
         <span class="bold">Cargo Capacity:<input name="attr_ship_cargo_capacity" type="text"></span>
       </div>
       <div class="other">
-        <span class="bold">Hyperdrive Multipiler:<input name="attr_hyperdrive_multi" style="width:90px;"
-                                                        type="text"></span>
+        <span class="bold 90px">Hyperdrive Multipiler:<input name="attr_hyperdrive_multi" type="text"></span>
         <span class="bold">Hyperdrive Backup:<input name="attr_hyperdrive_backup" type="text"></span>
         <span class="bold">Nav Computer:<input name="attr_nav_computer" type="text"></span>
       </div>
@@ -1035,25 +1032,25 @@
     <!-- -----------------------------------------------Generic Ship&Vehicle section ------------------------------- -->
 
     <div class="section ship">
-      <div class='2colrow'>
-        <div class='col'><!-- Vehicle -->
-          <label style="padding-top:4px;padding-bottom:4px;">Vehicle</label>
-          <input class="skilltext" name="attr_vehiclename" style="width:95%;padding-bottom:8px;" type="text"/>
-          <textarea name="attr_vehicle" style="width:97%;height:17em;"></textarea>
+      <div class="sheet-2colrow">
+        <div class="sheet-col"><!-- Vehicle -->
+          <label>Vehicle</label>
+          <input class="skilltext" name="attr_vehiclename" type="text"/>
+          <textarea name="attr_vehicle"></textarea>
         </div>
-        <div class='col'><!-- Starship -->
-          <label style="padding-top:4px;padding-bottom:4px;">Starship</label>
-          <input class="skilltext" name="attr_starshipname" style="width:95%;padding-bottom:8px;" type="text"/>
-          <textarea name="attr_starship" style="width:97%;height:17em;"></textarea>
+        <div class="sheet-col"><!-- Starship -->
+          <label>Starship</label>
+          <input class="skilltext" name="attr_starshipname" type="text"/>
+          <textarea name="attr_starship"></textarea>
         </div>
       </div>
     </div>
 
     <!-- ------------------------------------------------------- Footer -------------------------------------------- -->
 
-    <div class="section" style="text-align: Center; padding-top:10px;">
-      <p class="version" style="text-align: center;"><small>Original Author: Timothy O'Driscoll | Main Editor: Andreas
-        J. (Roll20user: 1223200) | </small></p>
+    <div class="section footer">
+      <p><small>Original Author: Timothy O'Driscoll | Main Editor: Andreas
+        J. (Roll20user: 1223200) | </small> <span name="attr_version"></span></p>
     </div>
 
   </div>

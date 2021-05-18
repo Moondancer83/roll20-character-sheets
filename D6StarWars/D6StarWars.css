@@ -8,11 +8,23 @@
     color:white;
 }
 
-.charsheet .sheet-version::after {
-    content: '2.34';
+.charsheet div.sheet-version-top{
+    position: absolute;
+    right: 5px;
+    top: 30px;
 }
 
-.charsheet label, h1, h2, h3, h4, h5{
+.charsheet div.sheet-logo{
+    display: inline-block;
+    position: absolute;
+    left: 150px;
+    padding-bottom: 50px;
+}
+.charsheet img.sheet-logo{
+    max-height: 80px;
+}
+
+.charsheet :is(label, h1, h2, h3, h4, h5){
     color:white;
 }
 
@@ -25,6 +37,10 @@
     resize:none;
 }
 
+.charsheet :is(p, .sheet-txtcenter){
+    text-align: center;
+}
+
 .charsheet .sheet-toppad{
     padding:2px;
 }
@@ -35,10 +51,6 @@
     width: calc(100% - 20px);
 }
 
-.charsheet .sheet-shipinfo span {
-    display: inline-block;
-    margin: 5px 10px 5px 10px;
-}
 
 .charsheet .sheet-flex-box{
     display: flex;
@@ -61,6 +73,10 @@
     float:right;
 }
 
+.charsheet .sheet-90px{
+    width: 90px;
+}
+
 .charsheet input[type=number].sheet-mediumnumber{
     width:60px;
 }
@@ -72,6 +88,11 @@
     padding-bottom: 2px;
     text-align: center;
 }
+.charsheet input[type=number].sheet-totalcredits{
+    width: 60%;
+    float: right;
+}
+
 
 .charsheet input[type=text].sheet-smalltext{
     width:60px;
@@ -153,6 +174,15 @@
 .charsheet label.sheet-areaLabel{
     margin:0;
 }
+
+.charsheet input[type="text"].sheet-60p{
+    width: 60%;
+}
+
+.charsheet .sheet-lineblck{
+    display:inline-block;
+}
+
 /*-----------------------------------------*/
 /*----------Roll Buttons classes-----------*/
 
@@ -181,6 +211,18 @@
 /* writing the letter 'e' with this font shows e bolt icon signifying energy damage */
 .charsheet button.sheet-energy{
     font-family: 'Pictos';
+}
+
+.charsheet span.sheet-physical{
+    font-family: 'Pictos Custom';
+    font-size: large;
+    content: 't';
+}
+/* writing the letter 'e' with this font shows e bolt icon signifying energy damage */
+.charsheet span.sheet-energy{
+    font-family: 'Pictos';
+    font-size: large;
+    content: 'e';
 }
 
 /*-------------------------------------------*/
@@ -226,10 +268,7 @@
 
 /* all hide options using option menu checkboxes*/
 
-.sheet-master-container .sheet-pc,
-.sheet-master-container .sheet-npc,
-.sheet-master-container .sheet-ship,
-.sheet-master-container .sheet-shop-inventory {
+.charsheet .sheet-master-container :is(.sheet-pc, .sheet-npc, .sheet-ship, .sheet-shop-inventory) {
     display: none;
 }
 
@@ -271,6 +310,8 @@
     background-image: url(https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_960_720.png); /*black space with tiny stars*/
     background-color: black;
     background-repeat: repeat;
+    width: 860px;
+    top: -10px;
 }
 
 .charsheet .sheet-container {
@@ -283,6 +324,11 @@
     display: inline-block;
     padding-top: 75px;
     margin-left: 0;
+}
+
+.charsheet div.sheet-footer{
+    text-align: center;
+    padding-top:10px;
 }
 
 /*-------------------------------------------*/
@@ -351,6 +397,11 @@
     display: block;
 }
 
+.charsheet div.sheet-sheettype-title{
+    position:absolute;
+    right: 5px;
+    top:-35px;
+}
 /*-------------------------------------------*/
 /*--------------- PC Section-----------------*/
 
@@ -369,8 +420,6 @@
     text-align: center;
 }
 
-
-
 .charsheet .sheet-custom-roll-table {
     display: table;
     width: 100%;
@@ -380,7 +429,42 @@
     width: 35px;
     height: 18px;
 }
+.charsheet textarea.sheet-description{
+    height:6em;
+    width:97%
+}
+.charsheet textarea.sheet-description-phys{
+    height: 6em;
+    width: 97%;
+    margin-top: 3px;
+}
+.charsheet textarea.sheet-specabilities{
+    width: 95%;
+    height: 12em;
+}
 
+.charsheet th.sheet-init{
+    vertical-align: top;
+}
+.charsheet td.sheet-init{
+    padding-left: 6px;
+    padding-bottom: 40px;
+}
+
+/*-------------------------------------------*/
+/*--------------- NPC Section-----------------*/
+.charsheet div.sheet-section.sheet-npc div.sheet-first-col{
+    display: inline-block;
+}
+.charsheet div.sheet-section.sheet-npc .sheet-npcname{
+    width: 65%;
+}
+.charsheet label.sheet-wound{
+    text-decoration: underline;
+}
+.charsheet select.sheet-wound{
+    width: 135px;
+}
 
 /* Attributes */
 .charsheet .sheet-attributes {
@@ -521,10 +605,7 @@
     margin: 4px 36px 4px 34px
 }
 
-.charsheet .editmode .sheet-unified-dice-roll,
-.charsheet .editmode .sheet-unified-dice-input,
-.charsheet .editmode .sheet-unified-dice-middle,
-.charsheet .editmode .sheet-unified-dice-pip {
+.charsheet .editmode :is(.sheet-unified-dice-roll, .sheet-unified-dice-input, .sheet-unified-dice-middle, .sheet-unified-dice-pip) {
     display: none !important;
 }
 
@@ -631,8 +712,40 @@
 }
 
 
+/* Equipment  & Backgorund */
+
+.charsheet div.sheet-section.sheet-equipment-hide textarea{
+    height: 7em;
+    width: 96%;
+}
+
+.charsheet div.sheet-section.sheet-backgorund-hide td.sheet-33p{
+    width: 33.33%;
+}
+
+
+/* Char point  & credit tracking */
+
+
+.charsheet .repcontainer[data-groupname="repeating_cptable"] > .repitem div,
+.charsheet .repcontainer[data-groupname="repeating_credittable"] > .repitem div{
+    padding-top: 8px;
+}
+.charsheet .repcontainer[data-groupname="repeating_cptable"] > .repitem input[type="text"],
+.charsheet .repcontainer[data-groupname="repeating_credittable"] > .repitem input[type="text"]{
+    width:80%;
+}
+.charsheet .repcontainer[data-groupname="repeating_credittable"] > .repitem input[type="number"]{
+    width:100px;
+}
+
 /*-------------------------------------------*/
 /*------------- Ship Section-----------------*/
+
+.charsheet .sheet-shipinfo span {
+    display: inline-block;
+    margin: 5px 10px 5px 10px;
+}
 
 .charsheet div.sheet-ship .sheet-wborder{
     border: 2px solid white;
@@ -648,9 +761,7 @@
 .charsheet div.sheet-shipheader span:nth-child(1) input[type="text"]{
     width: 300px;
 }
-.charsheet div.sheet-shipheader span:nth-child(2) input[type="text"]{
-    width: 150px;
-}
+.charsheet div.sheet-shipheader span:nth-child(2) input[type="text"],
 .charsheet div.sheet-shipheader span:nth-child(3) input[type="text"]{
     width: 150px;
 }
@@ -701,7 +812,8 @@
 .charsheet div.sheet-shipblock div.sheet-perf .sheet-medium,
 .charsheet div.sheet-shipblock div.sheet-sensor .sheet-medium,
 .charsheet div.sheet-shipblock div.sheet-hyperdrive input[type="text"],
-.charsheet div.sheet-shipblock div.sheet-price input[type="text"]{
+.charsheet div.sheet-shipblock div.sheet-price input[type="text"],
+{
     width: 80px;
 }
 
@@ -797,7 +909,30 @@
     margin-bottom: 10px;
 }
 
+/* Ship Weapons */
 
+.charsheet .repcontainer[data-groupname="repeating_shipweapon"] > .repitem div{
+    margin-bottom:10px;
+}
+.charsheet .repcontainer[data-groupname="repeating_shipweapon"] > .repitem span.sheet-range{
+    margin-left: 15px;
+}
+
+/* Generic Ship & Vehicle section */
+
+.charsheet div.sheet-section.sheet-ship label{
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+}
+.charsheet div.sheet-section.sheet-ship input[type="text"]{
+    width: 95%;
+    padding-bottom:8px;
+}
+.charsheet div.sheet-section.sheet-ship textarea{
+    width: 97%
+    height: 17em;
+}
 
 /*-------------------------------------------*/
 /*------------- Roll Templates---------------*/
